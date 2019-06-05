@@ -135,6 +135,148 @@ body {
   height: 100%;
 }
 /* Code Begins Here */
+/*Basics*/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,
+input,
+select,
+textarea {
+  color: black;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 15pt;
+  font-weight: 400;
+  letter-spacing: 0.075em;
+  line-height: 1.65em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+  font-weight: 800;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+}
+@media screen and (max-width: 1280px) {
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 12pt;
+  }
+}
+@media screen and (max-width: 800px) {
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 11pt;
+    letter-spacing: 0.0375em;
+  }
+}
+h1 {
+  font-size: 1.65em;
+  line-height: 1.75em;
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.35em;
+    line-height: 1.65em;
+  }
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.25em;
+    line-height: 1.65em;
+  }
+}
+h2 {
+  font-size: 1.45em;
+  line-height: 1.75em;
+}
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.65em;
+  }
+}
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 1.1em;
+    line-height: 1.65em;
+  }
+}
+h3 {
+  font-size: 1.25em;
+  line-height: 1.75em;
+}
+@media screen and (max-width: 800px) {
+  h3 {
+    font-size: 1em;
+    line-height: 1.65em;
+  }
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+h5 {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+h6 {
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+/*mixins*/
+/*Container and Header*/
+.container {
+  width: auto;
+  margin: 1.25rem;
+}
+header {
+  width: 100%;
+  display: flex;
+}
+.static-navbar {
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+nav {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+nav a {
+  text-decoration: none;
+  color: #b0b0b0;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+nav .navigation {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+/*Header*/
+header {
+  background: #e1f2f1;
+}
+/*Table content*/
 .table-wrapper {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
@@ -149,7 +291,7 @@ table tbody tr {
   border-right: 0;
 }
 table tbody tr:nth-child(2n + 1) {
-  background-color: rgba(144, 144, 144, 0.25);
+  background: #e1f2f1;
 }
 table td {
   padding: 0.75em 0.75em;
@@ -163,9 +305,6 @@ table th {
 }
 table thead {
   border-bottom: solid 2px #fff;
-}
-table tfoot {
-  border-top: solid 2px #fff;
 }
 table.alt {
   border-collapse: separate;
@@ -184,6 +323,11 @@ table.alt tbody tr:first-child td {
 table.alt thead {
   border-bottom: 0;
 }
-table.alt tfoot {
-  border-top: 0;
+footer {
+  display: flex;
+  background: black;
+  justify-content: center;
+}
+footer .copy {
+  color: whitesmoke;
 }
