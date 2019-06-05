@@ -86,7 +86,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 62.5%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -136,6 +136,7 @@ body {
 }
 /* Code Begins Here */
 /*Basics*/
+/*mixins*/
 html {
   box-sizing: border-box;
 }
@@ -150,7 +151,7 @@ select,
 textarea {
   color: black;
   font-family: "Open Sans", Helvetica, sans-serif;
-  font-size: 15pt;
+  font-size: 1.25rem;
   font-weight: 400;
   letter-spacing: 0.075em;
   line-height: 1.65em;
@@ -164,22 +165,23 @@ h6 {
   color: black;
   font-weight: 800;
   line-height: 1em;
-  margin: 0 0 1em 0;
+  margin: 0 0 0.5em 0;
 }
-@media screen and (max-width: 1280px) {
+@media (max-width: 800px) {
   body,
   input,
   select,
   textarea {
-    font-size: 12pt;
+    font-size: 1.2rem;
+    letter-spacing: 0.0375em;
   }
 }
-@media screen and (max-width: 800px) {
+@media (max-width: 500px) {
   body,
   input,
   select,
   textarea {
-    font-size: 11pt;
+    font-size: 1rem;
     letter-spacing: 0.0375em;
   }
 }
@@ -187,13 +189,13 @@ h1 {
   font-size: 1.65em;
   line-height: 1.75em;
 }
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   h1 {
     font-size: 1.35em;
     line-height: 1.65em;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 1.25em;
     line-height: 1.65em;
@@ -203,13 +205,13 @@ h2 {
   font-size: 1.45em;
   line-height: 1.75em;
 }
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   h2 {
     font-size: 1.2em;
     line-height: 1.65em;
   }
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
   h2 {
     font-size: 1.1em;
     line-height: 1.65em;
@@ -219,7 +221,7 @@ h3 {
   font-size: 1.25em;
   line-height: 1.75em;
 }
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   h3 {
     font-size: 1em;
     line-height: 1.65em;
@@ -237,7 +239,6 @@ h6 {
   font-size: 0.7em;
   line-height: 1.5em;
 }
-/*mixins*/
 /*Container and Header*/
 .container {
   width: auto;
@@ -274,7 +275,68 @@ nav .navigation {
 }
 /*Header*/
 header {
-  background: #e1f2f1;
+  background: #e5fcfc;
+}
+.image {
+  border-radius: 3px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+.image img {
+  border-radius: 3px;
+  display: block;
+}
+button {
+  background-color: whitesmoke;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5rem;
+  font-size: 12px;
+  border: 0.09rem solid black;
+  margin: 10px 0 10px 0;
+}
+/*Middle content*/
+.information-body {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.information-body .information-box {
+  padding: 1rem 0;
+  width: 48%;
+  margin: 0.8rem 0;
+}
+.information-body .information-box .points {
+  border: 1px solid grey;
+  padding: 0.4rem;
+}
+@media (max-width: 800px) {
+  .information-box {
+    padding: 1rem 0;
+    width: 48%;
+    margin: 0.8rem 0;
+  }
+  .information-box .points {
+    padding: 0.2rem;
+  }
+}
+@media (max-width: 500px) {
+  .information-body {
+    flex-wrap: none;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  .information-body .information-box {
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+  .information-body .information-box .points {
+    padding: 0.2rem;
+  }
 }
 /*Table content*/
 .table-wrapper {
@@ -286,12 +348,12 @@ table {
   width: 100%;
 }
 table tbody tr {
-  border: solid 1px #fff;
+  border: solid 1px #AEECEF;
   border-left: 0;
   border-right: 0;
 }
 table tbody tr:nth-child(2n + 1) {
-  background: #e1f2f1;
+  background: #e5fcfc;
 }
 table td {
   padding: 0.75em 0.75em;
@@ -322,6 +384,18 @@ table.alt tbody tr:first-child td {
 }
 table.alt thead {
   border-bottom: 0;
+}
+@media (max-width: 800px) {
+  table {
+    margin: 0 0 1em 0;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  table {
+    margin: 0 0 0.8em 0;
+    width: 100%;
+  }
 }
 footer {
   display: flex;

@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -59,6 +59,12 @@ html, body {
 
 /* Code Begins Here */
 /*Basics*/
+
+/*mixins*/
+@backgroundlightgrey: #e5fcfc;
+@widthtablet: 800px;
+@widthphone: 500px;
+
 html {
 	box-sizing: border-box;
 }
@@ -69,7 +75,7 @@ html {
 body, input, select, textarea {
 	color: black;
 	font-family: "Open Sans", Helvetica, sans-serif;
-	font-size: 15pt;
+	font-size: 1.25rem;
 	font-weight: 400;
 	letter-spacing: 0.075em;
 	line-height: 1.65em;
@@ -79,21 +85,22 @@ h1, h2, h3, h4, h5, h6 {
 	color:black;
 	font-weight: 800;
 	line-height: 1em;
-	margin: 0 0 1em 0;
+	margin: 0 0 0.5em 0;
 }
 
-@media screen and (max-width: 1280px) {
+
+@media (max-width: @widthtablet) {
 
 	body, input, select, textarea {
-		font-size: 12pt;
+		font-size: 1.2rem;
+		letter-spacing: 0.0375em;
 	}
 
 }
-
-@media screen and (max-width: 800px) {
+@media (max-width: @widthphone) {
 
 	body, input, select, textarea {
-		font-size: 11pt;
+		font-size: 1rem;
 		letter-spacing: 0.0375em;
 	}
 
@@ -104,7 +111,7 @@ h1 {
 	line-height: 1.75em;
 }
 	
-	@media screen and (max-width: 800px) {
+	@media (max-width: @widthtablet) {
 
 		h1 {
 			font-size: 1.35em;
@@ -112,7 +119,7 @@ h1 {
 		}
 
 	}
-	@media screen and (max-width: 500px) {
+	@media (max-width: @widthphone) {
 
 		h1 {
 			font-size: 1.25em;
@@ -126,7 +133,7 @@ h2 {
 	line-height: 1.75em;
 }
 
-	@media screen and (max-width: 800px) {
+	@media (max-width: @widthtablet) {
 
 		h2 {
 			font-size: 1.2em;
@@ -134,7 +141,7 @@ h2 {
 		}
 
 	}
-	@media screen and (max-width: 500px) {
+	@media (max-width: @widthphone) {
 
 		h2 {
 			font-size: 1.1em;
@@ -148,7 +155,7 @@ h3 {
 	line-height: 1.75em;
 }
 
-	@media screen and (max-width: 800px) {
+	@media (max-width: @widthtablet) {
 
 		h3 {
 			font-size: 1em;
@@ -172,8 +179,7 @@ h6 {
 	line-height: 1.5em;
 }
 
-/*mixins*/
-@backgroundlightgrey: #e1f2f1;
+
 /*Container and Header*/
 
 
@@ -214,10 +220,83 @@ nav {
 	}
 }
 
+
 /*Header*/
 header{
 	background: @backgroundlightgrey;
 }
+.image {
+	border-radius: 3px;
+	border: 0;
+	display: inline-block;
+	position: relative;
+	img {
+		border-radius: 3px;
+		display: block;
+	}
+}
+
+
+button {
+	background-color: whitesmoke;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.8rem 1.5rem;
+	border-radius: 5rem;
+	font-size: 12px;
+	border: 0.09rem solid black;
+	margin: 10px 0 10px 0;
+}
+
+/*Middle content*/
+.information-body {
+	width: auto;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+
+	.information-box {
+		padding: 1rem 0;
+		width: 48%;
+		margin: 0.8rem 0;
+		.points {
+			border: 1px solid grey;
+			padding: 0.4rem;
+		}
+	}
+		
+}
+@media (max-width: @widthtablet) {
+	.information-box {
+		padding: 1rem 0;
+		width: 48%;
+		margin: 0.8rem 0;
+		.points {
+			padding: 0.2rem;
+		}
+	}
+
+}
+@media (max-width: @widthphone) {
+	.information-body {
+		flex-wrap:none;
+		flex-direction: column;
+		align-content: space-between;
+		.information-box {
+			padding: 1rem 0;
+			width: 100%;
+			margin: 0.8rem 0;
+			.points {
+				padding: 0.2rem;
+			}
+		}
+	}
+
+}
+
+
+
+
 
 /*Table content*/
 .table-wrapper {
@@ -231,7 +310,7 @@ table {
 }
 
 	table tbody tr {
-		border: solid 1px #fff;
+		border: solid 1px #AEECEF;
 		border-left: 0;
 		border-right: 0;
 	}
@@ -277,6 +356,22 @@ table {
 		table.alt thead {
 			border-bottom: 0;
 		}
+
+
+@media (max-width: @widthtablet){
+		table {
+		margin: 0 0 1em 0;
+		width: 100%;
+		}
+}
+@media (max-width: @widthphone){
+		table {
+		margin: 0 0 0.8em 0;
+		width: 100%;
+		}
+}
+	
+
 footer {
 	display: flex;
 	background: black;
